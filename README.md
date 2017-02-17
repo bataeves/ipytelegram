@@ -10,6 +10,9 @@ Requires
 Install
 -------------
     (deprecated) %install_ext https://raw.githubusercontent.com/ermakovpetr/ipytelegram/master/ipytelegram.py
+    
+    or
+    
     jupyter nbextension install https://raw.githubusercontent.com/ermakovpetr/ipytelegram/master/ipytelegram.py
 
 Load
