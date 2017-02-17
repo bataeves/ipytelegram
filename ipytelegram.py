@@ -10,11 +10,17 @@ class TelegramSender(object):
         self.prefix = prefix
         self.max_retries = int(max_retries)
     
-    def send(self, message):
+    def send(self, message, output, error):
         retries = self.max_retries
         msg = message
         if self.prefix:
             msg = '[{}] {}'.format(self.prefix, msg)
+            
+        if output:
+            msg += '\n' + 'Output: ' + output
+            
+        if error:
+            msg += '\n' + 'Error: ' + error
 
         while retries >= 0:
             try:
@@ -51,8 +57,8 @@ class TelegramMagics(Magics):
 
     @cell_magic
     def telegram_send(self, line, cell):
-        self.shell.run_cell(cell)
-        self.sender.send(line)
+        run_result = self.shell.run_cell(cell)
+        self.sender.send(line, output=run_result.result, error=run_result.error_in_exec)
 
 
 def load_ipython_extension(ipython):
