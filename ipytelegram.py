@@ -17,10 +17,10 @@ class TelegramSender(object):
             msg = '[{}] {}'.format(self.prefix, msg)
             
         if output:
-            msg += '\n' + 'Output: ' + output
+            msg += '\n' + 'Output: ' + str(output)
             
         if error:
-            msg += '\n' + 'Error: ' + error
+            msg += '\n' + 'Error: ' + str(error)
 
         while retries >= 0:
             try:
