@@ -9,7 +9,7 @@ Requires
 
 Install
 -------------
-    %install_ext https://raw.githubusercontent.com/gdanschin/ipytelegram/master/ipytelegram.py
+    %install_ext https://raw.githubusercontent.com/ermakovpetr/ipytelegram/master/ipytelegram.py
 
 Load
 -------------
