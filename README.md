@@ -9,7 +9,7 @@ Requires
 
 Install
 -------------
-    %install_ext https://raw.githubusercontent.com/ermakovpetr/ipytelegram/master/ipytelegram.py
+    jupyter nbextension install  https://raw.githubusercontent.com/ermakovpetr/ipytelegram/master/ipytelegram.py
 
 Load
 -------------
