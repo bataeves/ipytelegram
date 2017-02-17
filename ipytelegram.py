@@ -13,6 +13,7 @@ class TelegramSender(object):
     def send(self, message, output, error):
         retries = self.max_retries
         msg = message
+
         if self.prefix:
             msg = '[{}] {}'.format(self.prefix, msg)
             
