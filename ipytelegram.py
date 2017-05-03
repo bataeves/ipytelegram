@@ -20,10 +20,10 @@ class TelegramSender(object):
 
         if output is not None:
             if output.__class__.__name__ == "DataFrame":
-                output = output.head(100).to_string()
+                output = output.head(20).to_string()
 
             if output:
-                msg += '\n' + 'Output: ' + str(output)
+                msg += '\n' + str(output)
 
         if error:
             msg += '\n' + 'Error: ' + str(error)
