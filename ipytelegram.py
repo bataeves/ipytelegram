@@ -62,8 +62,11 @@ class TelegramMagics(Magics):
 
     @cell_magic
     def telegram_send(self, line, cell):
-        run_result = self.shell.run_cell(cell)
-        self.sender.send(line, output=run_result.result, error=run_result.error_in_exec)
+        try:
+            run_result = self.shell.run_cell(cell)
+            self.sender.send(line, output=run_result.result, error=run_result.error_in_exec)
+        except Exception as e:
+            self.sender.send(line, output=None, error=str(e))
 
 
 def load_ipython_extension(ipython):
